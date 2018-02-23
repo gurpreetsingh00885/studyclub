@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Vid Search </title>
+</head>
+<body>
+	<center>
+		<h1> Video Search </h1>
+		<h3> Not FOR but THROUGH! </h3>
+
+		<form action = "." method="post">
+			{% csrf_token %}
+			{{ form }}
+			<input type="submit" value="open"/>
+		</form>
+
+	</center>
+</body>
+</html>
