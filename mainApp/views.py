@@ -54,7 +54,7 @@ class GroupsView(views.View):
 			venue = request.POST['venue']
 			date = request.POST['date']
 			topic = request.POST['topic']
-			StudyGroup.objects.create(time=time, venue=venue, date=date, topic=topic)
+			StudyGroup.objects.create(time=time, venue=venue, date=date, topic=topic, by=request.user)
 			return HttpResponseRedirect("/site/groups")
 		except:
 			raise Http404
