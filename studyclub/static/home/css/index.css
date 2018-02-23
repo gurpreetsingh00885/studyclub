@@ -51,5 +51,6 @@ button{
    text-decoration: none;
    border: none;
    width: 210px;
+   font-family: inherit;
 
 }
