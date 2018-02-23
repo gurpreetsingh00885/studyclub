@@ -1,12 +1,12 @@
 body{
-	background: linear-gradient(-135deg, #c850c0, #4158d0);
+	background: -webkit-linear-gradient(-180deg, #360033, #0b8793);
 }
 
 .card{
 	margin-top: 100px;
 	border-radius: 10px;
 	width: 750px;
-	height: 400px;
+	height: 450px;
 }
 
 .card-header{
