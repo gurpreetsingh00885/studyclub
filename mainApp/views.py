@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django import views
 from mainApp.forms import VidOpenForm
 from embed_video.backends import detect_backend
+from django.contrib.auth import authenticate
 # Create your views here.
 
 
@@ -24,3 +25,16 @@ class VideoSearchView(views.View):
 		return render(request, 'vidsearch/view.html', {"my_video": video, "cc_url": cc_url, 'vid_url': vid_url})
 
 vid_search_page = VideoSearchView.as_view()
+
+
+class LoginView(views.View):
+	def get(self, request, *args, **kwargs):
+		return render(request, "home/login.html", {})
+
+	def post(self, request, *args, **kwargs):
+		user = authenticate(username = request.POST['username'], password = request.POST['pass'])
+		if user is not None:
+			return HttpResponseRedirect("/groups/")
+		return render(request, "home/login.html", {"failed": True})
+
+login_page = LoginView.as_view()
