@@ -9,6 +9,7 @@
 		<h3> Not FOR but THROUGH! </h3>
 
 		<form action = "." method="post">
+			{% csrf_token %}
 			{{ form }}
 			<input type="submit" value="open"/>
 		</form>

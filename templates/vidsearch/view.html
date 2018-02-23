@@ -1,0 +1,34 @@
+{% load embed_video_tags %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Video Search </title>
+</head>
+<body>
+	<center>
+		{% video my_video '1200x600' %}<br/>
+		<input type="text" id="searchbox"/><button id="search">Search</button>
+	</center>
+</body>
+
+<script type="text/javascript">
+	function httpGetAsync(theUrl) {
+    	var xmlHttp = new XMLHttpRequest();
+    	xmlHttp.onreadystatechange = function() { 
+        	if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+            	console.log("OK");
+    	}
+    	xmlHttp.open("GET", theUrl.replace("&amp;", "&"), false); // true for asynchronous 
+    	xmlHttp.send();
+    	return xmlHttp.responseText
+	}
+	var cc = httpGetAsync("{{cc_url}}");
+
+	document.getElementById('search').addEventListener('click', function() {
+		var string = document.getElementById("searchbox").value;
+		alert(string);
+	});
+</script>
+
+</html>
