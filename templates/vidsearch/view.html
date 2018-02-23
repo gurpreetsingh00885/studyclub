@@ -5,11 +5,34 @@
 <head>
 	<title> Video Search </title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+<style type="text/css">
+	.Time{
+		display: inline-block;
+		margin: 10px;
+		padding: 7px;
+		font-size: 12px;
+		border-radius: 3px;
+	}
+
+	body{
+		padding:20px;
+		background-color: #000;
+	}
+
+	a:hover{
+		color: white;
+		text-decoration: none;
+	}
+
+
+</style>
+
 </head>
 <body>
 	<center>
-		{% video my_video '1200x600' %}<br/>
-		<input type="text" id="searchbox"/><button id="search">Search</button>
+		{% video my_video '1000x500' %}<br/><br>
+		<input type="text" id="searchbox"/>&nbsp;&nbsp;&nbsp;<button id="search" class="btn btn-primary">Search</button><br><br>
 		<div id="times">
 		</div>
 	</center>
@@ -55,7 +78,7 @@
   			if (element.indexOf(string)!=-1) {
 				time = parseInt(element.substr(0, element.indexOf("\"")));
 				
-				times_div.innerHTML = times_div.innerHTML +"<a href='https://www.youtube.com/watch?v={{vid_url}}&t="+ time +"'target='_blank'>" + ((""+time).toHHMMSS()) + "</a>" + "<br/>";
+				times_div.innerHTML = times_div.innerHTML+ "<div class='Time btn btn-outline-primary'>" +"<a href='https://www.youtube.com/watch?v={{vid_url}}&t="+ time +"'target='_blank'>" + ((""+time).toHHMMSS()) + "</a>" + "</div>";
 			}
 		});
 	});

@@ -1,7 +1,9 @@
 @charset "utf-8";
 body{
-  background: #edf0f1;
-  padding: 300px 0 0 0;
+  background: #CFD8DC;
+  padding: 400px 0 0 0;
+  height: 100%;
+  margin: 0;
 }
 
 body,input,button{
@@ -14,7 +16,7 @@ body,input,button{
 
 header {
 
-  height: 290px;
+  height: 350px;
   position: fixed;
   padding: 15px;
 
